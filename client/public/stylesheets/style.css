@@ -1,0 +1,19 @@
+body {
+  padding: 5px;
+  font: 12px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+#timertable {
+	text-align:left;
+	display:none;
+}
+
+
+#countertable {
+	text-align:left;
+	display:none;
+}

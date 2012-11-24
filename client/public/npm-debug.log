@@ -1,0 +1,26 @@
+info it worked if it ends with ok
+verbose cli [ 'node',
+verbose cli   'c:\\UBS\\dev\\node_modules\\npm\\bin\\npm-cli.js',
+verbose cli   'start' ]
+info using npm@1.1.9
+info using node@v0.8.14
+verbose config file C:\Documents and Settings\woottobe\.npmrc
+verbose config file C:\UBS\dev\node\etc\npmrc
+verbose config file c:\UBS\dev\node_modules\npm\npmrc
+verbose mkdir done: C:\UBS\dev\node 755
+ERR! Error: ENOENT, open 'C:\UBS\dev\client\public\package.json'
+ERR! You may report this log at:
+ERR!     <http://github.com/isaacs/npm/issues>
+ERR! or email it to:
+ERR!     <npm-@googlegroups.com>
+ERR! 
+ERR! System Windows_NT 5.1.2600
+ERR! command "node" "c:\\UBS\\dev\\node_modules\\npm\\bin\\npm-cli.js" "start"
+ERR! cwd C:\UBS\dev\client\public
+ERR! node -v v0.8.14
+ERR! npm -v 1.1.9
+ERR! path C:\UBS\dev\client\public\package.json
+ERR! code ENOENT
+ERR! message ENOENT, open 'C:\UBS\dev\client\public\package.json'
+ERR! errno {}
+verbose exit [ 1, true ]
