@@ -1,30 +1,29 @@
 StatsD Dashboard
 ================
 
-StatsD is a simple network daemon for keeping track of statistics pertaining to events emitted from your application.
+[StatsD](https://github.com/etsy/statsd) is a simple network daemon for keeping track of events emitted from your application.  It is typically integrated with [Graphite](graphite.wikidot.com), allowing you to capture application events and visualise trends in those events over time.  
 
-[https://github.com/etsy/statsd/]
+Though StatsD and Graphite are a powerful combination of tools, I built this project because I wanted a very lightweight dashboard that I could attach directly to the StatsD server to get a view of what was happening within the application at a given point in time.
 
-StatsD is typically integrated with Graphite, together providing a very powerful solution to capturing events and visualising those events over time.  
+![Alt text](benjaminwootton.github.com/repository/img/statsd-dashboard.png)
 
-Though StatsD and Graphite are excellent, I wanted a very lightweight dashboard that I could attach to the StatsD server to get a view of what was happening within my application.  
+The dashboard is by default served as a lightweight HTML page.  On start it connects via a web socket to a StatsD back end, and listens for events.  Each time the metrics are flushed to the StatsD backend, the same object is pushed directly to the web page over a web socket where it is rendered into tables and charts without any page reload.
 
-The dashboard is by default served as an unstyled valid XHTML document that is updated in real time using data pushed from StatsD over a websocket.
+Technologies Used
+=================
 
-Users can then style the dashboard to their preference using CSS.
-
-Technologies
-============
-The dashboard is a Node.JS project that is build on the Express framework.
- 
+Node.js, Express, Socket.IO
 
 Usage 
-
-1) Install the StatsD backend
-
-2) Starts StatsD
-
-3) Run the Server
-
-4) Navigate to http://localhost:3001
-
+=====
++ git clone https://github.com/benjaminwootton/statsd-dashboard.git
++ Configure StatsD to use the provided back-end
+    ``{
+      flushInterval: 1000,
+      backends: [ "../statsd-dashboard/server/socketio.js" ]
+    }``
++ Start StatsD and ensure it is publishing data correctly
++ Run the StatsD dashboard client
+    ``cd client
+    node app.js``
++ Navigate to http://localhost:3001 and you should see data flowing into the dashboard at each StatsD flush interval.
