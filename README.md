@@ -5,7 +5,7 @@ StatsD Dashboard
 
 Though StatsD and Graphite are a powerful combination of tools, I built this project because I wanted a very lightweight dashboard that I could attach directly to the StatsD server to get a view of what was happening within the application at a given point in time.
 
-![Alt text](benjaminwootton.github.com/repository/img/statsd-dashboard.png)
+![Dashboard Screenshot](http://benjaminwootton.co.uk/dashboard.png)
 
 The dashboard is by default served as a lightweight HTML page.  On start it connects via a web socket to a StatsD back end, and listens for events.  Each time the metrics are flushed to the StatsD backend, the same object is pushed directly to the web page over a web socket where it is rendered into tables and charts without any page reload.
 
